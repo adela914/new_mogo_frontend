@@ -1,4 +1,4 @@
-# new_mogo_frontend
+# New Mogo Frontend
 
 ## Project setup
 ```
