@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <main>
+    main
+    <!-- <Tabs
+      v-model="tabIndex"
+      :tabs="{ day: false, month: false, year: false }"
+    /> -->
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+// import Tabs from "@/components/Tabs.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
-    HelloWorld,
+    // Tabs,
+  },
+  data() {
+    return {
+      tabIndex: 0,
+    };
   },
 });
 </script>
+<style lang="scss" scoped>
+@import "~@/assets/scss/colors.scss";
+
+main {
+  background-color: $white;
+}
+</style>
