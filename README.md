@@ -5,7 +5,7 @@ Mogo means "Eat!" in Korean. This application is for people who have a craving f
 This app is the new version of my Mogo side project. (Click [here](https://github.com/adela914/mogo) to see the first version!)
 I started from the scratch again and replace it with modern tech stacks in order to widen my knowledge and try new technologies.
 
-Currently only frontend part is partially done and still in progress.
+Currently only partially done and still in progress.
 
 ## Backend Tech Stacks
 
