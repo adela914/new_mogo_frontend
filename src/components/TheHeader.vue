@@ -10,7 +10,9 @@
       <li><a href="">FAQ</a></li>
       <li><a href="">Bookings</a></li>
     </ul>
-    <div class="navbar__login" :class="{ active: openHeader }">Login</div>
+    <div class="navbar__login" :class="{ active: openHeader }">
+      <a href="">Sign In</a> <Button name="Sign Up" @click="signUpBtnClicked" />
+    </div>
     <div class="navbar__toggleBtn">
       <Icon name="fas fa-bars" @click="toggleHeader" />
     </div>
@@ -20,10 +22,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Icon from "@/components/Icon.vue";
+import Button from "@/components/Button.vue";
+
 export default defineComponent({
   name: "TheHeader",
   components: {
     Icon,
+    Button,
   },
   data() {
     return {
@@ -34,6 +39,9 @@ export default defineComponent({
     toggleHeader() {
       this.openHeader = !this.openHeader;
     },
+    signUpBtnClicked() {
+      console.log("sign up");
+    },
   },
 });
 </script>
@@ -41,26 +49,26 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "~@/assets/scss/colors.scss";
 
-/* Nav container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background-color: --background-color;
+  background-color: $white;
+  height: 80px;
+  box-shadow: inset 0px -1px 0px #f3f3f4;
 }
 
-/* Logo with text */
 .navbar__logo {
   font-size: 24px;
   color: $accent_0;
+  padding: 10px;
 }
 
 .navbar__logo i {
   color: $accent_0;
 }
 
-/* Menu */
 .navbar__menu {
   display: flex;
   padding-left: 0;
@@ -81,9 +89,13 @@ export default defineComponent({
   color: $accent_0;
   display: flex;
   padding-left: 0;
+  align-items: center;
+
+  .button {
+    margin-left: 18px;
+  }
 }
 
-/* Toggle button */
 .navbar__toggleBtn {
   display: none;
   position: absolute;
@@ -93,41 +105,38 @@ export default defineComponent({
   color: var(--accent-color);
 }
 
-/* For small screen */
 @media screen and (max-width: 768px) {
-  /* Nav container */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 8px 24px;
+    height: auto;
+    box-shadow: none;
   }
 
-  /* Menu */
   .navbar__menu {
     display: none;
     flex-direction: column;
     text-align: center;
     width: 100%;
+    box-shadow: inset 0px 4px 0px -3px #f3f3f4;
   }
 
   .navbar__menu a {
-    /* Fill in an entire line so that user can click on any space */
     display: block;
   }
 
-  /* Icons */
   .navbar__login {
     display: none;
     justify-content: center;
     width: 100%;
   }
 
-  /* Toggle button */
   .navbar__toggleBtn {
     display: block;
+    padding: 10px;
   }
 
-  /* When toggle button is clicked - active state */
   .navbar__menu.active,
   .navbar__login.active {
     display: flex;
