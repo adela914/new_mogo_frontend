@@ -10,10 +10,7 @@
       <li><a href="">FAQ</a></li>
       <li><a href="">Bookings</a></li>
     </ul>
-    <ul class="navbar__icons" :class="{ active: openHeader }">
-      <li><Icon name="fab fatwitter" /></li>
-      <li><Icon name="fab facebook-f" /></li>
-    </ul>
+    <div class="navbar__login" :class="{ active: openHeader }">Login</div>
     <div class="navbar__toggleBtn">
       <Icon name="fas fa-bars" @click="toggleHeader" />
     </div>
@@ -79,16 +76,11 @@ export default defineComponent({
   text-underline-offset: 2px;
 }
 
-.navbar__icons {
+.navbar__login {
   list-style: none;
-  color: --text-color;
+  color: $accent_0;
   display: flex;
   padding-left: 0;
-}
-
-/* Icons */
-.navbar__icons li {
-  padding: 8px 12px;
 }
 
 /* Toggle button */
@@ -124,7 +116,7 @@ export default defineComponent({
   }
 
   /* Icons */
-  .navbar__icons {
+  .navbar__login {
     display: none;
     justify-content: center;
     width: 100%;
@@ -137,7 +129,7 @@ export default defineComponent({
 
   /* When toggle button is clicked - active state */
   .navbar__menu.active,
-  .navbar__icons.active {
+  .navbar__login.active {
     display: flex;
   }
 }
