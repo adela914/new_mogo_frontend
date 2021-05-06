@@ -2,7 +2,7 @@
   <div>
     <p>Components Libraries</p>
     <Button name="my button" />
-    <Input v-model="inputValue" />
+    <Input v-model="inputValue" type="type" />
     <!-- <Tabs
       v-model="tabIndex"
       :tabs="{ day: false, month: false, year: false }"
@@ -36,6 +36,6 @@ export default defineComponent({
 @import "~@/assets/scss/colors.scss";
 
 main {
-  background-color: $white;
+  background-color: $white_0;
 }
 </style>

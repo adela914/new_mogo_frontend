@@ -31,6 +31,6 @@ export default defineComponent({
 @import "~@/assets/scss/main.scss";
 
 main {
-  background-color: $white;
+  background-color: $white_0;
 }
 </style>

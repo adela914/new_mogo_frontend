@@ -54,7 +54,7 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background-color: $white;
+  background-color: $white_0;
   height: 80px;
   box-shadow: inset 0px -1px 0px #f3f3f4;
 }
@@ -65,21 +65,17 @@ export default defineComponent({
   padding: 10px;
 }
 
-.navbar__logo i {
-  color: $accent_0;
-}
-
 .navbar__menu {
   display: flex;
   padding-left: 0;
   list-style: none;
+
+  li {
+    padding: 8px 12px;
+  }
 }
 
-.navbar__menu li {
-  padding: 8px 12px;
-}
-
-.navbar__menu li:hover {
+.navbar__menu .navbar__menu li:hover {
   text-decoration: underline wavy;
   text-underline-offset: 2px;
 }
