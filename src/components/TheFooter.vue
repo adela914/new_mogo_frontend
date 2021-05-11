@@ -2,21 +2,21 @@
   <footer class="footer">
     <p>Made with 💜 in Berlin</p>
     <a href="https://www.linkedin.com/in/kyunghwa5/" target="_blank"
-      ><Icon name="fab fa-linkedin"
+      ><BaseIcon name="fab fa-linkedin"
     /></a>
     <a href="https://github.com/adela914" target="_blank"
-      ><Icon name="fab fa-github-alt"
+      ><BaseIcon name="fab fa-github-alt"
     /></a>
   </footer>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import Icon from "@/components/Icon.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
 export default defineComponent({
   name: "TheFooter",
   components: {
-    Icon,
+    BaseIcon,
   },
 });
 </script>

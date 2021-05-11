@@ -7,18 +7,18 @@
       placeholder="Search"
       @input="$emit('update:modelValue', $event.target.value)"
     />
-    <Icon v-if="type === 'search'" name="fas fa-search" />
+    <BaseIcon v-if="type === 'search'" name="fas fa-search" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Icon from "@/components/Icon.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
 export default defineComponent({
-  name: "Input",
+  name: "BaseInput",
   emits: ["update:modelValue"],
   components: {
-    Icon,
+    BaseIcon,
   },
   props: {
     modelValue: {
@@ -78,7 +78,7 @@ input[type="search"] {
   }
 }
 
-.icon {
+.baseIcon {
   position: absolute;
   left: 10px;
   top: 11px;

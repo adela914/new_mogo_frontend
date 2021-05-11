@@ -1,5 +1,5 @@
 <template>
-  <button class="button">
+  <button class="baseButton" role="button" type="button">
     {{ name }}
     <slot />
   </button>
@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 export default defineComponent({
-  name: "Button",
+  name: "BaseButton",
   props: {
     name: {
       required: true,
@@ -22,7 +22,7 @@ export default defineComponent({
 @import "~@/assets/scss/colors.scss";
 
 // TODO: make it respostve, hide text and show an icon in smaller size
-.button {
+.baseButton {
   border-radius: 8px;
   border: none;
   cursor: pointer;

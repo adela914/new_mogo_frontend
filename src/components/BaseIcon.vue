@@ -1,11 +1,11 @@
 <template>
-  <i :class="name" class="icon"></i>
+  <i :class="name" class="baseIcon"></i>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "Icon",
+  name: "BaseIcon",
   props: {
     name: {
       type: String,

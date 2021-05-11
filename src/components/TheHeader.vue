@@ -11,24 +11,25 @@
       <li><a href="">Bookings</a></li>
     </ul>
     <div class="navbar__login" :class="{ active: openHeader }">
-      <a href="">Sign In</a> <Button name="Sign Up" @click="signUpBtnClicked" />
+      <a href="">Sign In</a>
+      <BaseButton name="Sign Up" @click="signUpBtnClicked" />
     </div>
     <div class="navbar__toggleBtn">
-      <Icon name="fas fa-bars" @click="toggleHeader" />
+      <BaseIcon name="fas fa-bars" @click="toggleHeader" />
     </div>
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Icon from "@/components/Icon.vue";
-import Button from "@/components/Button.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
+import BaseButton from "@/components/BaseButton.vue";
 
 export default defineComponent({
   name: "TheHeader",
   components: {
-    Icon,
-    Button,
+    BaseIcon,
+    BaseButton,
   },
   data() {
     return {
@@ -87,7 +88,7 @@ export default defineComponent({
   padding-left: 0;
   align-items: center;
 
-  .button {
+  .baseButton {
     margin-left: 18px;
   }
 }
