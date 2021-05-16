@@ -1,21 +1,26 @@
 <template>
   <nav class="navbar">
     <div class="navbar__logo">
-      <a href="">MOGO</a>
+      <router-link to="/">MOGO</router-link>
     </div>
-    <ul class="navbar__menu" :class="{ active: openHeader }">
+    <!-- <ul class="navbar__menu" :class="{ active: openHeader }">
       <li><a href="">Home</a></li>
       <li><a href="">Gallery</a></li>
       <li><a href="">Weddings</a></li>
       <li><a href="">FAQ</a></li>
       <li><a href="">Bookings</a></li>
-    </ul>
+    </ul> -->
     <div class="navbar__login" :class="{ active: openHeader }">
-      <a href="">Sign In</a>
-      <BaseButton name="Sign Up" @click="signUpBtnClicked" />
+      <router-link to="signin">Sign In</router-link>
+      <router-link to="signup"
+        ><BaseButton name="Sign Up" @click="signUpBtnClicked"
+      /></router-link>
     </div>
     <div class="navbar__toggleBtn">
-      <BaseIcon name="fas fa-bars" @click="toggleHeader" />
+      <BaseIcon
+        :name="openHeader ? 'fas fa-times' : 'fas fa-bars'"
+        @click="toggleHeader"
+      />
     </div>
   </nav>
 </template>

@@ -1,24 +1,34 @@
 <template>
   <div>
-    <p>Components Libraries. Still working in progress...</p>
+    <h1>Components Libraries. Still working in progress...</h1>
     <BaseButton name="my button" />
     <BaseInput v-model="inputValue" type="search" />
     <p>{{ inputValue }}</p>
-
     <BaseDropdown dropdownId="'testDropdown'">
       <template v-slot:button>{{ dropdownValue }} </template>
       <template v-slot:content>
-        <ul>
+        <ul listbox>
           <li
+            role="option"
             v-for="(item, index) in dropdownItems"
             :key="index"
             @click="itemSelected(item)"
           >
-            {{ item }}
+            <a href="#"> {{ item }}</a>
           </li>
         </ul>
       </template>
     </BaseDropdown>
+    <BaseButton @click="showModal = true"> Show Modal</BaseButton>
+    <BaseModal
+      v-if="showModal"
+      @close="showModal = false"
+      :label="'test-modal'"
+    >
+      <template #header>
+        <h3>custom header</h3>
+      </template>
+    </BaseModal>
   </div>
 </template>
 
@@ -27,6 +37,7 @@ import { defineComponent } from "vue";
 import BaseButton from "@/components/BaseButton.vue";
 import BaseInput from "@/components/BaseInput.vue";
 import BaseDropdown from "@/components/BaseDropdown.vue";
+import BaseModal from "@/components/BaseModal.vue";
 
 export default defineComponent({
   name: "Home",
@@ -34,6 +45,7 @@ export default defineComponent({
     BaseButton,
     BaseInput,
     BaseDropdown,
+    BaseModal,
   },
   data() {
     return {
@@ -41,6 +53,7 @@ export default defineComponent({
       inputValue: "",
       dropdownItems: ["item1", "item2"],
       dropdownValue: "item1",
+      showModal: false,
     };
   },
   methods: {

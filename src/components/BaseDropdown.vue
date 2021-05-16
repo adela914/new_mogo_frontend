@@ -4,6 +4,7 @@
     <button
       :disabled="disabled"
       class="o-dropdown__button"
+      :class="{ isOpen }"
       :aria-expanded="isOpen.toString()"
       :aria-controls="dropdownId"
       @click="toggleOpen"
@@ -66,7 +67,7 @@ export default defineComponent({
     documentClick(e: MouseEvent) {
       let el = this.$refs.menu as HTMLElement;
       let target = e.target as Node;
-      if (el !== target && !el.contains(target)) {
+      if (el && el !== target && !el.contains(target)) {
         this.closeHandler();
       }
     },
@@ -83,15 +84,23 @@ export default defineComponent({
 .o-dropdown__button {
   background: white;
   border-radius: 8px;
-  border: 1px solid grey;
+  border: 1px solid $border_grey;
   padding: 16px 26px 16px 16px;
   width: 100%;
   margin-bottom: 4px;
   position: relative;
+  cursor: pointer;
+}
+
+.o-dropdown__button.isOpen {
+  box-shadow: 0 0 0 4px rgba(248, 225, 245, 0.879);
+  border: none;
 }
 
 ::v-deep .o-dropdown__menu {
-  border: 1px solid grey;
+  border: 1px solid $border_grey;
+  cursor: pointer;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
 
   li {
     background-color: white;

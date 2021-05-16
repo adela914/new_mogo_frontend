@@ -1,13 +1,16 @@
 <template>
-  <div class="inputField">
+  <div class="o-baseInput">
     <input
-      class="input"
+      class="o-baseInput__field"
       :value="modelValue"
       :type="type"
-      placeholder="Search"
+      :placeholder="placeholder"
       @input="$emit('update:modelValue', $event.target.value)"
     />
-    <BaseIcon v-if="type === 'search'" name="fas fa-search" />
+    <BaseIcon
+      v-if="type === 'search'"
+      name="fas fa-search o-baseInput__prefixIcon"
+    />
   </div>
 </template>
 
@@ -28,17 +31,22 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    placeholder: {
+      type: String,
+      required: false,
+      default: "Search",
+    },
   },
 });
 </script>
 <style lang="scss" scoped>
 @import "~@/assets/scss/colors.scss";
-.inputField {
+.o-baseInput {
   display: inline-block;
   position: relative;
 }
 
-.input {
+.o-baseInput__field {
   background-color: #f3f3f4;
   border-radius: 8px;
   outline: none;
@@ -57,6 +65,7 @@ export default defineComponent({
   opacity: 1; /* Firefox */
 }
 
+/* Style for native clear icon */
 input[type="search"] {
   padding-left: 32px;
 
@@ -78,7 +87,7 @@ input[type="search"] {
   }
 }
 
-.baseIcon {
+.o-baseInput__prefixIcon {
   position: absolute;
   left: 10px;
   top: 11px;
