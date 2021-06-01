@@ -2,8 +2,10 @@
   <div>
     <h1>Components Libraries. Still working in progress...</h1>
     <BaseButton name="my button" />
-    <BaseInput v-model="inputValue" type="search" />
+    <BaseInput v-model="inputValue" type="search" ref="closeButton" />
     <p>{{ inputValue }}</p>
+    <BaseButton @click="showModal = true" name="Show Modal" />
+
     <BaseDropdown dropdownId="'testDropdown'">
       <template v-slot:button>{{ dropdownValue }} </template>
       <template v-slot:content>
@@ -19,7 +21,6 @@
         </ul>
       </template>
     </BaseDropdown>
-    <BaseButton @click="showModal = true"> Show Modal</BaseButton>
     <BaseModal
       v-if="showModal"
       @close="showModal = false"
@@ -71,6 +72,6 @@ main {
 }
 
 .o-dropdown {
-  max-width: 250px;
+  max-width: 300px;
 }
 </style>

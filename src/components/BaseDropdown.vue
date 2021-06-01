@@ -36,7 +36,6 @@ export default defineComponent({
       isOpen: false,
     };
   },
-
   props: {
     disabled: {
       type: Boolean,

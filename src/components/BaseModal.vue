@@ -5,6 +5,14 @@
         <div class="modal-container">
           <div class="modal-header">
             <slot name="header"> default header </slot>
+            <button
+              @click="$emit('close')"
+              ref="closeButton"
+              class="closeBtn"
+              @keydown.esc="$emit('close')"
+            >
+              <BaseIcon name="fas fa-times" />
+            </button>
           </div>
 
           <div class="modal-body">
@@ -12,12 +20,7 @@
           </div>
 
           <div class="modal-footer">
-            <slot name="footer">
-              default footer
-              <BaseButton class="modal-default-button" @click="$emit('close')">
-                Close
-              </BaseButton>
-            </slot>
+            <slot name="footer"> default footer </slot>
           </div>
         </div>
       </div>
@@ -27,9 +30,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import BaseButton from "@/components/BaseButton.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
 export default defineComponent({
-  name: "Modal",
+  name: "BaseModal",
   props: {
     label: {
       type: String,
@@ -37,7 +40,10 @@ export default defineComponent({
     },
   },
   components: {
-    BaseButton,
+    BaseIcon,
+  },
+  mounted() {
+    (this.$refs.closeButton as HTMLElement).focus();
   },
 });
 </script>
@@ -62,7 +68,8 @@ export default defineComponent({
 }
 
 .modal-container {
-  width: 300px;
+  height: 500px;
+  width: 500px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: $white_0;
@@ -72,6 +79,7 @@ export default defineComponent({
 }
 
 ::v-deep .modal-header h3 {
+  display: inline-block;
   margin-top: 0;
   color: $accent_0;
 }
@@ -80,9 +88,11 @@ export default defineComponent({
   margin: 20px 0;
 }
 
-.modal-default-button {
-  display: block;
-  margin-top: 20px;
+.closeBtn {
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  float: right;
 }
 
 /* Style for modal animation*/

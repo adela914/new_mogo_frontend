@@ -52,6 +52,8 @@ export default defineComponent({
   outline: none;
   border: 1px solid transparent;
   padding: 10px 16px;
+  display: block;
+  width: 100%;
 
   &:hover,
   &:focus {

@@ -11,7 +11,8 @@ export default defineComponent({
   name: "BaseButton",
   props: {
     name: {
-      required: true,
+      required: false,
+      default: "",
       type: String as PropType<string>,
     },
   },
