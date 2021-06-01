@@ -45,6 +45,11 @@ export default defineComponent({
   margin: auto;
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+
+  h1 {
+    text-align: center;
+  }
 }
 
 .o-baseInput {

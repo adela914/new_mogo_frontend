@@ -25,8 +25,6 @@ export default defineComponent({
 @import "~@/assets/scss/colors.scss";
 
 .footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   text-align: center;
   background-color: $footer_grey;
