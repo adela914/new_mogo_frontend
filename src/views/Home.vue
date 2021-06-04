@@ -30,6 +30,7 @@
         <h3>custom header</h3>
       </template>
     </BaseModal>
+    <BaseTabs :tabs="['day', 'month', 'year']" v-model="tabIndex" />
   </div>
 </template>
 
@@ -39,6 +40,7 @@ import BaseButton from "@/components/BaseButton.vue";
 import BaseInput from "@/components/BaseInput.vue";
 import BaseDropdown from "@/components/BaseDropdown.vue";
 import BaseModal from "@/components/BaseModal.vue";
+import BaseTabs from "@/components/BaseTabs.vue";
 
 export default defineComponent({
   name: "Home",
@@ -47,13 +49,14 @@ export default defineComponent({
     BaseInput,
     BaseDropdown,
     BaseModal,
+    BaseTabs,
   },
   data() {
     return {
       tabIndex: 0,
       inputValue: "",
-      dropdownItems: ["item1", "item2"],
-      dropdownValue: "item1",
+      dropdownItems: [],
+      dropdownValue: "",
       showModal: false,
     };
   },
@@ -61,6 +64,17 @@ export default defineComponent({
     itemSelected(item: string) {
       this.dropdownValue = item;
     },
+  },
+  async created() {
+    const res = await fetch(
+      "https://jscc19-mogo-backend.herokuapp.com/restaurants"
+    );
+
+    const json = await res.json();
+    const names = json.map(({ name }: { name: string }) => name);
+
+    this.dropdownValue = names[0];
+    this.dropdownItems = names;
   },
 });
 </script>
