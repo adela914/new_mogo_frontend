@@ -21,6 +21,11 @@
         </ul>
       </template>
     </BaseDropdown>
+    <BaseCard
+      title="Arirang"
+      subTitle="@ Prenzlauer Berg"
+      imgSrc="http://german.korea.net/upload/content/editImage/180929_life_food_doenjang%20jjigae.jpg"
+    />
     <BaseModal
       v-if="showModal"
       @close="showModal = false"
@@ -43,6 +48,8 @@ import BaseInput from "@/components/BaseInput.vue";
 import BaseDropdown from "@/components/BaseDropdown.vue";
 import BaseModal from "@/components/BaseModal.vue";
 import BaseTabs from "@/components/BaseTabs.vue";
+import BaseCard from "@/components/BaseCard.vue";
+
 // import { useQuery, useResult } from "@vue/apollo-composable";
 // import { GET_ALL_RES } from "@/graphql/graphqlTypes";
 
@@ -54,6 +61,7 @@ export default defineComponent({
     BaseDropdown,
     BaseModal,
     BaseTabs,
+    BaseCard,
   },
   data() {
     return {
@@ -82,7 +90,7 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~@/assets/scss/colors.scss";
 
 main {

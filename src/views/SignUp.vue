@@ -36,7 +36,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~@/assets/scss/colors.scss";
 
 .signup__container {
@@ -50,27 +50,26 @@ export default defineComponent({
   h1 {
     text-align: center;
   }
-}
+  .o-baseInput {
+    padding-bottom: 24px;
+    display: inline;
 
-.o-baseInput {
-  padding-bottom: 24px;
-  display: inline;
-
-  .o-baseInput__field {
-    width: 100%;
+    .o-baseInput__field {
+      width: 100%;
+    }
   }
-}
 
-.button__container {
-  display: flex;
-  justify-content: space-around;
-}
+  .button__container {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.baseButton {
-  width: 200px;
-}
+  .baseButton {
+    width: 200px;
+  }
 
-.signup__cancelBtn {
-  background-color: $white_0;
+  .signup__cancelBtn {
+    background-color: $white_0;
+  }
 }
 </style>

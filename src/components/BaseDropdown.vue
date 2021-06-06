@@ -111,13 +111,15 @@ export default defineComponent({
   }
 }
 
-.a-baseIcon {
-  position: absolute;
-  right: 12px;
-  transition: all 150ms ease-in-out;
-}
+.a-dropdown {
+  .a-baseIcon {
+    position: absolute;
+    right: 12px;
+    transition: all 150ms ease-in-out;
+  }
 
-.toggleUp {
-  transform: rotate(180deg);
+  .toggleUp {
+    transform: rotate(180deg);
+  }
 }
 </style>
