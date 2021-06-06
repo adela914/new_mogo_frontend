@@ -7,7 +7,7 @@ I started from the scratch again and replace it with modern tech stacks in order
 
 Currently only partially done and still in progress.
 
-## Backend Tech Stacks
+## Frontend Tech Stacks
 
 ```
 Vue3
