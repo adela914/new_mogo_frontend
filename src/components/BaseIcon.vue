@@ -1,5 +1,5 @@
 <template>
-  <i :class="name" class="baseIcon"></i>
+  <i :class="name" class="a-baseIcon"></i>
 </template>
 
 <script lang="ts">
@@ -14,4 +14,3 @@ export default defineComponent({
   },
 });
 </script>
-<style></style>

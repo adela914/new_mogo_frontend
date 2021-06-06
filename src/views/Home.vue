@@ -30,7 +30,9 @@
         <h3>custom header</h3>
       </template>
     </BaseModal>
-    <BaseTabs :tabs="['day', 'month', 'year']" v-model="tabIndex" />
+    <BaseTabs :tabs="['day', 'week', 'month', 'year']" v-model="tabIndex">
+      <template v-slot:day> Day Content </template>
+    </BaseTabs>
   </div>
 </template>
 
@@ -41,6 +43,8 @@ import BaseInput from "@/components/BaseInput.vue";
 import BaseDropdown from "@/components/BaseDropdown.vue";
 import BaseModal from "@/components/BaseModal.vue";
 import BaseTabs from "@/components/BaseTabs.vue";
+// import { useQuery, useResult } from "@vue/apollo-composable";
+// import { GET_ALL_RES } from "@/graphql/graphqlTypes";
 
 export default defineComponent({
   name: "Home",
@@ -65,7 +69,7 @@ export default defineComponent({
       this.dropdownValue = item;
     },
   },
-  async created() {
+  async mounted() {
     const res = await fetch(
       "https://jscc19-mogo-backend.herokuapp.com/restaurants"
     );
@@ -85,7 +89,7 @@ main {
   background-color: $white_0;
 }
 
-.o-dropdown {
+.a-dropdown {
   max-width: 300px;
 }
 </style>

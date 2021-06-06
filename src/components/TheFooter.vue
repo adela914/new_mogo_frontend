@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="o-footer">
     <p>Made with 💜 in Berlin</p>
     <a href="https://www.linkedin.com/in/kyunghwa5/" target="_blank"
       ><BaseIcon name="fab fa-linkedin"
@@ -24,7 +24,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "~@/assets/scss/colors.scss";
 
-.footer {
+.o-footer {
   width: 100%;
   text-align: center;
   background-color: $footer_grey;

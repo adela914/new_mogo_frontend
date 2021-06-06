@@ -1,5 +1,5 @@
 <template>
-  <button class="baseButton" role="button" type="button">
+  <button class="a-baseButton" role="button" type="button">
     {{ name }}
     <slot />
   </button>
@@ -19,11 +19,11 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~@/assets/scss/colors.scss";
 
 // TODO: make it respostve, hide text and show an icon in smaller size
-.baseButton {
+.a-baseButton {
   border-radius: 8px;
   border: none;
   cursor: pointer;

@@ -1,12 +1,12 @@
 <template>
-  <header class="header">
-    <div class="header__logo">
+  <header class="o-header">
+    <div class="o-header__logo">
       <router-link to="/">MOGO</router-link>
     </div>
     <div>
       <BaseInput v-model="inputValue" type="search" />
     </div>
-    <div class="header__login" :class="{ active: openHeader }">
+    <div class="o-header__login" :class="{ active: openHeader }">
       <router-link to="signin">Sign In</router-link>
       <router-link to="signup"
         ><BaseButton name="Sign Up" @click="signUpBtnClicked"
@@ -46,7 +46,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "~@/assets/scss/colors.scss";
 
-.header {
+.o-header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
@@ -57,20 +57,20 @@ export default defineComponent({
   box-shadow: inset 0px -1px 0px #f3f3f4;
 }
 
-.header__logo {
+.o-header__logo {
   font-size: 24px;
   color: $accent_0;
   padding: 10px;
 }
 
-.header__login {
+.o-header__login {
   list-style: none;
   color: $accent_0;
   display: flex;
   padding-left: 0;
   align-items: center;
 
-  .baseButton {
+  .a-baseButton {
     margin-left: 18px;
   }
 }

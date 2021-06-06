@@ -1,9 +1,9 @@
 <template>
-  <div class="o-dropdown" ref="menu">
+  <div class="a-dropdown" ref="menu">
     <slot name="head"></slot>
     <button
       :disabled="disabled"
-      class="o-dropdown__button"
+      class="a-dropdown__button"
       :class="{ isOpen }"
       :aria-expanded="isOpen.toString()"
       :aria-controls="dropdownId"
@@ -13,7 +13,7 @@
       <BaseIcon name="fas fa-chevron-down" :class="{ toggleUp: isOpen }" />
     </button>
     <div
-      class="o-dropdown__menu"
+      class="a-dropdown__menu"
       :id="dropdownId"
       :hidden="!isOpen"
       @click="closeHandler"
@@ -77,10 +77,10 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~@/assets/scss/colors.scss";
 
-.o-dropdown__button {
+.a-dropdown__button {
   background: white;
   border-radius: 8px;
   border: 1px solid $border_grey;
@@ -91,12 +91,12 @@ export default defineComponent({
   cursor: pointer;
 }
 
-.o-dropdown__button.isOpen {
+.a-dropdown__button.isOpen {
   box-shadow: 0 0 0 4px rgba(248, 225, 245, 0.879);
   border: none;
 }
 
-::v-deep .o-dropdown__menu {
+.a-dropdown__menu {
   border: 1px solid $border_grey;
   cursor: pointer;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
@@ -111,7 +111,7 @@ export default defineComponent({
   }
 }
 
-.baseIcon {
+.a-baseIcon {
   position: absolute;
   right: 12px;
   transition: all 150ms ease-in-out;

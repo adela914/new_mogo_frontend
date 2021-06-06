@@ -1,9 +1,14 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask" :aria-label="label" role="dialog" aria-modal="true">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-          <header class="modal-header">
+    <div
+      class="o-modal__mask"
+      :aria-label="label"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="o-modal__wrapper">
+        <div class="o-modal__container">
+          <header class="o-modal__header">
             <slot name="header"> default header </slot>
             <button
               @click="$emit('close')"
@@ -15,10 +20,10 @@
               <BaseIcon name="fas fa-times" />
             </button>
           </header>
-          <section class="modal-body">
+          <section class="o-modal__body">
             <slot name="body"> default body </slot>
           </section>
-          <footer class="modal-footer">
+          <footer class="o-modal__footer">
             <slot name="footer"> default footer </slot>
           </footer>
         </div>
@@ -46,10 +51,10 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~@/assets/scss/colors.scss";
 
-.modal-mask {
+.o-modal__mask {
   position: fixed;
   z-index: 9998;
   top: 0;
@@ -61,12 +66,12 @@ export default defineComponent({
   transition: opacity 0.3s ease;
 }
 
-.modal-wrapper {
+.o-modal__wrapper {
   display: table-cell;
   vertical-align: middle;
 }
 
-.modal-container {
+.o-modal__container {
   height: 500px;
   width: 500px;
   margin: 0px auto;
@@ -75,23 +80,23 @@ export default defineComponent({
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
+
+  .closeBtn {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    float: right;
+  }
 }
 
-::v-deep .modal-header h3 {
+.o-modal__header h3 {
   display: inline-block;
   margin-top: 0;
   color: $accent_0;
 }
 
-.modal-body {
+.o-modal__body {
   margin: 20px 0;
-}
-
-.closeBtn {
-  padding: 6px 10px;
-  border: none;
-  cursor: pointer;
-  float: right;
 }
 
 /* Style for modal animation*/
