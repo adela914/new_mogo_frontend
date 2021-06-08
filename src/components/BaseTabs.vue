@@ -81,16 +81,16 @@ export default defineComponent({
     /**
      * @method handleKey Navigation can be accessible with arrow keys.
      */
-    async handleKey(e: KeyboardEvent) {
+    handleKey(e: KeyboardEvent) {
       const tabElement = this.$refs.tab as Array<HTMLElement>;
 
       if (e.key === Key.ArrowLeft && this.modelValue - 1 >= 0) {
-        await this.tabClicked(this.modelValue - 1);
+        this.tabClicked(this.modelValue - 1);
       } else if (
         e.key === Key.ArrowRight &&
         this.modelValue + 1 < this.tabs.length
       ) {
-        await this.tabClicked(this.modelValue + 1);
+        this.tabClicked(this.modelValue + 1);
       } else if (e.key === Key.ArrowDown) {
         const tabPanelElement = this.$refs.tabpanel as Array<HTMLElement>;
         tabPanelElement[this.modelValue].focus();

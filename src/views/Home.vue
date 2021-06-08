@@ -5,7 +5,6 @@
     <BaseInput v-model="inputValue" type="search" ref="closeButton" />
     <p>{{ inputValue }}</p>
     <BaseButton @click="showModal = true" name="Show Modal" />
-
     <BaseDropdown dropdownId="'testDropdown'">
       <template v-slot:button>{{ dropdownValue }} </template>
       <template v-slot:content>
@@ -35,7 +34,7 @@
         <h3>custom header</h3>
       </template>
     </BaseModal>
-    <BaseTabs :tabs="['day', 'week', 'month', 'year']" v-model="tabIndex">
+    <BaseTabs :tabs="['day', 'week', 'month']" v-model="tabIndex">
       <template v-slot:day> Day Content </template>
     </BaseTabs>
   </div>
